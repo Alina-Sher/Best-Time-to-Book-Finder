@@ -1,0 +1,30 @@
+{
+  "name": "Travel.pk Best-Time-to-Book DEMO dataset (SIMULATED - not real airline data)",
+  "is_synthetic": true,
+  "currency": "PKR",
+  "source_url": null,
+  "source_description": "Generated locally by data/generate_demo_data.py using a seeded random simulation. No external provider, API or website was used.",
+  "retrieved_date": "Generated on 2026-10-20",
+  "geographic_coverage": "Pakistan domestic, one-way: LHE→KHI, KHI→LHE, LHE→ISB, ISB→LHE, KHI→ISB, ISB→KHI (these routes exist only as simulated rows).",
+  "observation_semantics": "Each row is one simulated fare snapshot for one simulated itinerary (route + carrier + departure date), as if observed on observation_date. Each itinerary has 10 snapshots at different lead times.",
+  "field_definitions": {
+    "obs_id": "Unique observation identifier (SIM-nnnnnn).",
+    "origin": "Departure airport IATA code.",
+    "destination": "Arrival airport IATA code.",
+    "carrier": "Generic placeholder carrier name (not a real airline).",
+    "trip_type": "ONE_WAY.",
+    "observation_date": "Date the simulated fare was 'seen' (ISO-8601).",
+    "departure_date": "Date of the simulated flight (ISO-8601).",
+    "fare": "Simulated one-way fare in whole PKR.",
+    "currency": "ISO-4217 code; all rows are PKR.",
+    "source": "Always SIMULATED here."
+  },
+  "provenance": "All fares are random draws from formulas whose parameters (base fare, seasonality, weekday effect, last-minute premium, route-specific cheapest lead time, noise) are illustrative assumptions by the developer. They are not estimates of real fares, airlines or traveller behaviour. Carrier names are generic placeholders.",
+  "limitations": [
+    "Booking-window patterns in this dataset are produced by the simulation's own assumptions, so any recommendation demonstrates the method only.",
+    "Departures cover calendar year 2025 only; observations start up to 90 days earlier.",
+    "ISB→KHI in February and KHI→ISB in January are deliberately thin/missing to exercise the app's insufficient-data and empty-data states.",
+    "Every itinerary has snapshots in every booking window by construction, unlike real scrapes."
+  ],
+  "license": "Generated data, free to use and replace."
+}
